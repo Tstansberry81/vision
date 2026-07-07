@@ -17,70 +17,80 @@ window.VISION_DATA = {
       "name": "Pacs Group Inc",
       "sector": "Health Care",
       "weight": 0.1,
-      "accel": 2.902275425805417
+      "accel": 2.902275425805417,
+      "price": 36.46
     },
     {
       "ticker": "IBRX",
       "name": "ImmunityBio Inc.",
       "sector": "Health Care",
       "weight": 0.1,
-      "accel": 2.2256862503067887
+      "accel": 2.2256862503067887,
+      "price": 7.12
     },
     {
       "ticker": "MRNA",
       "name": "Moderna Inc.",
       "sector": "Health Care",
       "weight": 0.1,
-      "accel": 0.8692238584310376
+      "accel": 0.8692238584310376,
+      "price": 51.18
     },
     {
       "ticker": "ALGM",
       "name": "Allegro MicroSystems Inc.",
       "sector": "Information Technology",
       "weight": 0.1,
-      "accel": 0.8251879844176285
+      "accel": 0.8251879844176285,
+      "price": 53.84
     },
     {
       "ticker": "FTAI",
       "name": "FTAI Aviation Ltd.",
       "sector": "Industrials",
       "weight": 0.1,
-      "accel": 0.8081721404444353
+      "accel": 0.8081721404444353,
+      "price": 262.21
     },
     {
       "ticker": "LITE",
       "name": "Lumentum Holdings Inc.",
       "sector": "Information Technology",
       "weight": 0.1,
-      "accel": 0.6886014244752856
+      "accel": 0.6886014244752856,
+      "price": 946.05
     },
     {
       "ticker": "SN",
       "name": "Sharkninja Inc",
       "sector": "Consumer Discretionary",
       "weight": 0.1,
-      "accel": 0.6725158803565282
+      "accel": 0.6725158803565282,
+      "price": 135.57
     },
     {
       "ticker": "EAT",
       "name": "Brinker International Inc.",
       "sector": "Consumer Discretionary",
       "weight": 0.1,
-      "accel": 0.653307600985062
+      "accel": 0.653307600985062,
+      "price": 157.2
     },
     {
       "ticker": "CAVA",
       "name": "CAVA Group Inc.",
       "sector": "Consumer Discretionary",
       "weight": 0.1,
-      "accel": 0.6239289797181929
+      "accel": 0.6239289797181929,
+      "price": 90.68
     },
     {
       "ticker": "OC",
       "name": "Owens Corning Inc",
       "sector": "Industrials",
       "weight": 0.1,
-      "accel": 0.622378875005636
+      "accel": 0.622378875005636,
+      "price": 125.39
     }
   ],
   "performance": {
@@ -612,6 +622,6 @@ window.VISION_DATA = {
       "excess": 0.09764972099642333
     }
   ],
-  "generated_at": "2026-07-07T19:12:37Z",
+  "generated_at": "2026-07-07T19:47:36Z",
   "disclaimer": "Backtest, net of ~10bps costs. Not a forecast or investment advice."
 };

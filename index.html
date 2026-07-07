@@ -146,6 +146,14 @@
   .clegend i{display:inline-block;width:18px;height:0;border-top:2.4px solid var(--green)}
   .clegend i.dash{border-top:1.6px dashed var(--muted);width:18px}
   .clegend .stat b{color:var(--green-bright);font-family:var(--mono);font-weight:500}
+  .calcwrap{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .calcsel{background:var(--panel-2);border:1px solid var(--border-2);color:var(--text);border-radius:10px;padding:12px 14px;font-size:14px;font-family:var(--body);min-width:240px;cursor:pointer}
+  .calcsel:focus{outline:none;border-color:var(--green)}
+  .calcgrid{display:grid;grid-template-columns:repeat(4,auto);gap:26px;flex:1}
+  .calcgrid .k{font-size:10.5px;letter-spacing:.13em;color:var(--muted);text-transform:uppercase}
+  .calcgrid .v{font-family:var(--mono);font-size:19px;font-weight:700;margin-top:6px}
+  .calcgrid .v.g{color:var(--green-bright)}
+  @media(max-width:720px){.calcgrid{grid-template-columns:repeat(2,1fr);gap:16px}}
   .advice{margin-top:2px}
   .advice h3{font-family:var(--display);font-weight:600;font-size:20px;margin-bottom:4px}
   .advice .asub{color:var(--muted);font-size:13.5px;margin-bottom:16px}
@@ -239,6 +247,20 @@
       <div class="tile"><div class="k">Positions</div><div class="v">10</div></div>
       <div class="tile"><div class="k">Per position</div><div class="v g" id="tPer">$0</div></div>
       <div class="tile"><div class="k">Weight each</div><div class="v">10%</div></div>
+    </div>
+
+    <div class="panel" style="margin-bottom:14px">
+      <div class="ptitle"><h3>Share calculator</h3><span class="ptag">per position</span></div>
+      <p class="psub">Your capital splits into 10 equal positions of <b id="calcPer" style="color:var(--green-bright)">$0</b>. Pick a holding to see how many shares that buys.</p>
+      <div class="calcwrap">
+        <select id="calcSel" class="calcsel"></select>
+        <div class="calcgrid">
+          <div><div class="k">Share price</div><div class="v" id="calcPrice">—</div></div>
+          <div><div class="k">Shares</div><div class="v g" id="calcShares">—</div></div>
+          <div><div class="k">Whole shares</div><div class="v" id="calcWhole">—</div></div>
+          <div><div class="k">Uninvested</div><div class="v" id="calcLeft">—</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="charts">
@@ -342,7 +364,33 @@
     updateDashCopy(); drawDonut();
     drawCurve('line', VISION && VISION.curve, 180);
     drawCurve('line20', VISION && VISION.curve_long, 210);
+    initCalc();
     show('s3');
+  }
+
+  // ---- share calculator: (capital/10) / share price, per chosen holding ----
+  function initCalc(){
+    const sel=document.getElementById('calcSel'); if(!sel) return;
+    const book = VISION && Array.isArray(VISION.book) ? VISION.book : [];
+    sel.innerHTML = book.map((b,i)=>`<option value="${i}">${b.ticker} — ${(b.name||'').slice(0,26)}</option>`).join('')
+      || '<option value="-1">No holdings yet</option>';
+    document.getElementById('calcPer').textContent = fmt(cash/10);
+    sel.onchange = computeCalc;
+    computeCalc();
+  }
+  function computeCalc(){
+    const sel=document.getElementById('calcSel'); if(!sel) return;
+    const book = VISION && Array.isArray(VISION.book) ? VISION.book : [];
+    const b = book[+sel.value];
+    const per = cash/10;
+    const price = b && b.price ? +b.price : null;
+    const set=(id,v)=>{const el=document.getElementById(id); if(el) el.textContent=v;};
+    if(!price){ set('calcPrice','—'); set('calcShares','—'); set('calcWhole','—'); set('calcLeft','—'); return; }
+    const shares = per/price, whole = Math.floor(shares), left = per - whole*price;
+    set('calcPrice', fmt(price));
+    set('calcShares', shares.toFixed(2));
+    set('calcWhole', whole.toLocaleString('en-US')+' sh');
+    set('calcLeft', fmt(left));
   }
 
   function updateDashCopy(){
