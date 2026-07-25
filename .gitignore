@@ -6,5 +6,5 @@ Thumbs.db
 .vscode/
 
 # NOTE: vision_data.js IS committed on purpose — it's the data the static site
-# serves. Regenerate it with export_sauron.py (in the Edge repo) and commit the
+# serves. Regenerate it with export_vision.py (in the Edge repo) and commit the
 # update to publish fresh picks.

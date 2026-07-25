@@ -6,7 +6,7 @@ lightweight **static site** that turns the in-house Edge model's output into a
 the S&P 500). Holds no model code — it just renders a data snapshot.
 
 ```
-the Edge repo (in-house model)  ──►  export_sauron.py  ──►  vision_data.js  ──►  index.html
+the Edge repo (in-house model)  ──►  export_vision.py  ──►  vision_data.js  ──►  index.html
 ```
 
 ## Files
@@ -23,7 +23,7 @@ the Edge repo (in-house model)  ──►  export_sauron.py  ──►  vision_d
 ## Refreshing the data
 From the in-house Edge repo (`../quant model`):
 ```
-.venv/Scripts/python.exe export_sauron.py    # rewrites ../vision/vision_data.js
+.venv-mac/bin/python export_vision.py    # rewrites ../vision/vision_data.js
 ```
 Commit + push the updated `vision_data.js` to redeploy fresh picks.
 
