@@ -2688,7 +2688,7 @@ window.VISION_DATA = {
       "excess": 0.08769616844818628
     }
   ],
-  "generated_at": "2026-07-30T16:17:53Z",
+  "generated_at": "2026-07-30T16:18:00Z",
   "disclaimer": "Backtest, net of ~10bps costs. Not a forecast or investment advice.",
   "descriptions_note": "Business descriptions are sourced from public company profiles. The ranking and sector-cap notes are computed from this model's own numbers. Neither is research, and neither played any part in choosing the stocks."
 };
