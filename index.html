@@ -370,11 +370,11 @@
           ${b && b.what ? `<div class="blurb">${esc(b.what)}</div>` : ''}
         </div>
         <div class="wt">10%</div>
-        ${b && (b.different || b.why) ? `<details>
+        ${b && (b.standing || b.why) ? `<details>
           <summary>Why this one</summary>
           <dl>
-            ${b.different ? `<dt>Edge</dt><dd>${esc(b.different)}</dd>` : ''}
-            ${b.why ? `<dt>Model</dt><dd>${esc(b.why)}</dd>` : ''}
+            ${b.why ? `<dt>Pick</dt><dd>${esc(b.why)}</dd>` : ''}
+            ${b.standing ? `<dt>Standing</dt><dd>${esc(b.standing)}</dd>` : ''}
           </dl>
         </details>` : ''}
       </div>`;
