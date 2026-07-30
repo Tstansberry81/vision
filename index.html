@@ -113,7 +113,10 @@
   .pos .meta .ticker{font-family:var(--mono);font-weight:700;font-size:15px;display:flex;align-items:center;gap:9px}
   .pos .meta .tag{font-family:var(--body);font-size:9.5px;font-weight:700;letter-spacing:.08em;color:var(--green);
     border:1px solid rgba(25,193,114,.4);border-radius:5px;padding:2px 6px;text-transform:uppercase}
-  .pos .meta .alloc{font-size:12.5px;color:var(--muted);margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  /* Wraps rather than ellipsing. Truncating this line cut off the dollar
+     amount -- "SANDISK CORP · Eq..." -- which is the one number on the row the
+     reader actually came for. A second line is cheaper than a hidden figure. */
+  .pos .meta .alloc{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.45}
   .pos .meta .alloc b{color:var(--green-bright);font-family:var(--mono);font-weight:500}
   .pos .wt{font-family:var(--mono);font-size:13px;color:var(--muted);flex:0 0 auto}
   /* --- company write-up. Sentence one sits in the row; the model's reason for
