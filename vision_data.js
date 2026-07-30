@@ -11,6 +11,8 @@ window.VISION_DATA = {
     "signal": "12-1 momentum (12-month return, skipping the last month)",
     "mcap_floor_bn": 10.0,
     "sector_cap": 2,
+    "fcf_positive": true,
+    "debt_ebitda_max": 4.0,
     "continuous_regime": true,
     "vol_target": 0.25,
     "cost_bps": 10.0
@@ -26,7 +28,7 @@ window.VISION_DATA = {
       "signal": 38.17771352313167,
       "signal_col": "ret_12_1",
       "price": 1436.56,
-      "industry": "",
+      "industry": "Computer Hardware",
       "what": "Sandisk Corporation develops, manufactures, and sells data storage devices and solutions using NAND flash technology in the United States, Europe, the Middle East, Africa, Asia, and internationally.",
       "standing": "Its momentum reading put it in the top 0.2% of the 599 companies that cleared the model's size and solvency filters this month. It carried an $85B market cap at the rebalance.",
       "why": "Ranked 1 of 10 in this month's book on a 39x rise over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 16%) and carries debt under 4x EBITDA. It holds one of the 2 places the model allows any single sector, which is why a stronger Technology name may be absent."
@@ -39,7 +41,7 @@ window.VISION_DATA = {
       "signal": 7.586420520986243,
       "signal_col": "ret_12_1",
       "price": 920.95,
-      "industry": "",
+      "industry": "Semiconductors",
       "what": "Micron Technology, Inc. designs, develops, manufactures, and sells memory and storage products in the United States, Taiwan, Japan, Mainland China, Hong Kong, Europe, and internationally.",
       "standing": "Its momentum reading put it in the top 0.3% of the 599 companies that cleared the model's size and solvency filters this month. It carried a $501B market cap at the rebalance.",
       "why": "Ranked 2 of 10 in this month's book on a 9x rise over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 18%) and carries debt under 4x EBITDA (at 0.3x). It holds one of the 2 places the model allows any single sector, which is why a stronger Technology name may be absent."
@@ -52,7 +54,7 @@ window.VISION_DATA = {
       "signal": 6.542207792207792,
       "signal_col": "ret_12_1",
       "price": 20.47,
-      "industry": "",
+      "industry": "Aerospace & Defense",
       "what": "Planet Labs PBC engages in the design, construction, and launch of constellations of satellites with the intent of providing high-cadence geospatial data delivered to customers through an online platform in the United States and internationally.",
       "standing": "Its momentum reading put it in the top 0.7% of the 599 companies that cleared the model's size and solvency filters this month. It carried a $12B market cap at the rebalance.",
       "why": "Ranked 3 of 10 in this month's book on a 8x rise over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 17%) and carries debt under 4x EBITDA. It holds one of the 2 places the model allows any single sector, which is why a stronger Industrials name may be absent."
@@ -65,7 +67,7 @@ window.VISION_DATA = {
       "signal": 2.7988226835625056,
       "signal_col": "ret_12_1",
       "price": 660.93,
-      "industry": "",
+      "industry": "Engineering & Construction",
       "what": "Sterling Infrastructure, Inc. engages in the provision of e-infrastructure, transportation, and building solutions in the United States. It operates through three segments: E-Infrastructure, Transportation, and Building Solutions.",
       "standing": "Its momentum reading put it in the top 1.5% of the 599 companies that cleared the model's size and solvency filters this month. It carried a $13B market cap at the rebalance.",
       "why": "Ranked 4 of 10 in this month's book on a +279.9% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 15%) and carries debt under 4x EBITDA (at 0.7x). It holds one of the 2 places the model allows any single sector, which is why a stronger Industrials name may be absent."
@@ -78,7 +80,7 @@ window.VISION_DATA = {
       "signal": 1.9414724132148247,
       "signal_col": "ret_12_1",
       "price": 15.14,
-      "industry": "",
+      "industry": "Other Precious Metals & Mining",
       "what": "Hecla Mining Company, together with its subsidiaries, provides precious and base metals in the United States, Canada, Japan, Korea, China, and internationally.",
       "standing": "Its momentum reading put it in the top 3.2% of the 599 companies that cleared the model's size and solvency filters this month. It carried a $14B market cap at the rebalance.",
       "why": "Ranked 5 of 10 in this month's book on a +194.1% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 22%) and carries debt under 4x EBITDA (at 0.4x). It holds one of the 2 places the model allows any single sector, which is why a stronger Basic Materials name may be absent."
@@ -91,7 +93,7 @@ window.VISION_DATA = {
       "signal": 1.5986699194599474,
       "signal_col": "ret_12_1",
       "price": 44.24,
-      "industry": "",
+      "industry": "Aluminum",
       "what": "Alcoa Corporation, together with its subsidiaries, engages in the bauxite mining, alumina refining, aluminum production, and energy generation business in Australia, Brazil, Canada, Iceland, Norway, Spain, the United States, and internationally. The company operates through two segments: Alumina and Aluminum.",
       "standing": "Its momentum reading put it in the top 4.2% of the 599 companies that cleared the model's size and solvency filters this month. It carried a $17B market cap at the rebalance.",
       "why": "Ranked 6 of 10 in this month's book on a +159.9% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 4%) and carries debt under 4x EBITDA (at 1.3x). It holds one of the 2 places the model allows any single sector, which is why a stronger Basic Materials name may be absent."
@@ -104,7 +106,7 @@ window.VISION_DATA = {
       "signal": 1.4908592321755028,
       "signal_col": "ret_12_1",
       "price": 25.77,
-      "industry": "",
+      "industry": "Entertainment",
       "what": "Warner Bros. Discovery, Inc. operates as a media and entertainment company worldwide.",
       "standing": "Its momentum reading put it in the top 5.3% of the 599 companies that cleared the model's size and solvency filters this month. It carried a $70B market cap at the rebalance.",
       "why": "Ranked 7 of 10 in this month's book on a +149.1% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 8%) and carries debt under 4x EBITDA (at 3.5x). It holds one of the 2 places the model allows any single sector, which is why a stronger Communication Services name may be absent."
@@ -117,7 +119,7 @@ window.VISION_DATA = {
       "signal": 1.4890662456878911,
       "signal_col": "ret_12_1",
       "price": 94.54,
-      "industry": "",
+      "industry": "Telecom Services",
       "what": "Millicom International Cellular S.A. engages in the provision cable and mobile services in Latin America.",
       "standing": "Its momentum reading put it in the top 5.5% of the 599 companies that cleared the model's size and solvency filters this month. It carried a $13B market cap at the rebalance.",
       "why": "Ranked 8 of 10 in this month's book on a +148.9% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 17%) and carries debt under 4x EBITDA (at 2.6x). It holds one of the 2 places the model allows any single sector, which is why a stronger Communication Services name may be absent."
@@ -130,7 +132,7 @@ window.VISION_DATA = {
       "signal": 1.0828757975960825,
       "signal_col": "ret_12_1",
       "price": 29.28,
-      "industry": "",
+      "industry": "Oil & Gas Integrated",
       "what": "Cenovus Energy Inc., together with its subsidiaries, develops, produces, refines, transports, and markets crude oil, natural gas, and refined petroleum products in Canada, the United States, and China. It operates through Upstream and Downstream segments.",
       "standing": "Its momentum reading put it in the top 8.3% of the 599 companies that cleared the model's size and solvency filters this month. It carried a $44B market cap at the rebalance.",
       "why": "Ranked 9 of 10 in this month's book on a +108.3% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 9%) and carries debt under 4x EBITDA (at 1.4x). It holds one of the 2 places the model allows any single sector, which is why a stronger Energy name may be absent."
@@ -143,7 +145,7 @@ window.VISION_DATA = {
       "signal": 1.0753390534182117,
       "signal_col": "ret_12_1",
       "price": 36.15,
-      "industry": "",
+      "industry": "Oil & Gas E&P",
       "what": "APA Corporation, an independent energy company, explores for, develops, and produces natural gas, crude oil, and natural gas liquids. The company has oil and gas operations in the United States, Egypt, and North Sea.",
       "standing": "Its momentum reading put it in the top 8.8% of the 599 companies that cleared the model's size and solvency filters this month. It carried a $10B market cap at the rebalance.",
       "why": "Ranked 10 of 10 in this month's book on a +107.5% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 19%) and carries debt under 4x EBITDA (at 0.9x). It holds one of the 2 places the model allows any single sector, which is why a stronger Energy name may be absent."
@@ -2124,7 +2126,7 @@ window.VISION_DATA = {
       "excess": 0.08394872268005948
     }
   ],
-  "generated_at": "2026-07-30T17:04:50Z",
+  "generated_at": "2026-07-30T20:37:07Z",
   "disclaimer": "Backtest, net of ~10bps costs. Not a forecast or investment advice.",
   "descriptions_note": "Business descriptions are sourced from public company profiles. The ranking and sector-cap notes are computed from this model's own numbers. Neither is research, and neither played any part in choosing the stocks."
 };
