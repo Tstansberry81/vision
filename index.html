@@ -116,6 +116,21 @@
   .pos .meta .alloc{font-size:12.5px;color:var(--muted);margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .pos .meta .alloc b{color:var(--green-bright);font-family:var(--mono);font-weight:500}
   .pos .wt{font-family:var(--mono);font-size:13px;color:var(--muted);flex:0 0 auto}
+  /* --- company write-up. Sentence one sits in the row; the model's reason for
+         owning the name is one click away. See VISION.descriptions_note. --- */
+  .pos{flex-wrap:wrap}
+  .pos .blurb{font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.55}
+  .pos details{flex:1 0 100%;margin-top:2px}
+  .pos details summary{list-style:none;cursor:pointer;font-size:10px;letter-spacing:.07em;
+    text-transform:uppercase;color:var(--green);font-weight:700;padding:7px 0 2px}
+  .pos details summary::-webkit-details-marker{display:none}
+  .pos details summary::after{content:'  +'}
+  .pos details[open] summary::after{content:'  –'}
+  .pos details dl{margin:5px 0 2px;display:grid;grid-template-columns:auto 1fr;gap:5px 12px;
+    font-size:12.5px;line-height:1.55}
+  .pos details dt{color:var(--muted-2);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;padding-top:3px;white-space:nowrap}
+  .pos details dd{margin:0;color:var(--muted)}
   .note{text-align:center;color:var(--muted-2);font-size:12.5px;line-height:1.6;max-width:520px;margin:18px auto 0}
   .note b{color:var(--green)}
 
@@ -205,7 +220,7 @@
       </div>
       <div class="eyebrow">Vision</div>
       <h1>Vision, sized to <span class="i">your capital</span>.</h1>
-      <p class="lede">Ten equal-weight positions from Porter's momentum-and-growth model, refreshed monthly &mdash; <b>powered by fiscal.ai + market data</b>.</p>
+      <p class="lede">Ten equal-weight positions from Porter's momentum model, rebalanced on the first trading day of every month &mdash; <b>ranked on market data only</b>.</p>
     </div>
     <div class="field">
       <span class="glyph">$</span>
@@ -286,7 +301,7 @@
 
     <div class="panel">
       <div class="ptitle"><h3>20-year track record</h3><span class="ptag" id="ltPill">20Y backtest</span></div>
-      <p class="psub" id="ltSub">Full ~20-year backtest at the same 1-month rebalance and 75% growth mix, net of costs — vs the S&amp;P 500.</p>
+      <p class="psub" id="ltSub">Full ~20-year backtest on the same monthly rebalance, net of costs — vs the S&amp;P 500.</p>
       <svg id="line20" width="100%" height="210" viewBox="0 0 520 210" preserveAspectRatio="none"></svg>
       <div class="clegend"><span><i></i>Vision</span><span><i class="dash"></i>S&amp;P 500</span><span class="stat" id="ltStat" style="margin-left:auto"></span></div>
     </div>
@@ -319,6 +334,11 @@
   const parseCash=v=>parseFloat(String(v).replace(/[^0-9.]/g,''))||0;
   const fmt=n=>n.toLocaleString('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2});
   const fmt0=n=>n.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+  // Company names and write-ups go through innerHTML. The write-ups are written
+  // by a language model rather than typed by hand, so treating them as trusted
+  // markup would be putting generated text straight into the DOM.
+  const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
   cashInput.addEventListener('input',()=>{cash=parseCash(cashInput.value);go1.disabled=!(cash>0);});
   cashInput.addEventListener('keydown',e=>{if(e.key==='Enter'&&cash>0)toPositions();});
@@ -337,21 +357,36 @@
     for(let i=1;i<=10;i++){
       const b = book ? book[i-1] : null;
       const ticker = b ? b.ticker : 'N/A';
-      const tag = b ? String(b.sector||'EDGE').toUpperCase() : 'PENDING';
+      // Prefer the fine-grained industry ("Semiconductors") over the 11-bucket
+      // sector ("Technology"); fall back through sector so a name missing from
+      // the industry sidecar still gets a label rather than an empty chip.
+      const tag = b ? String(b.industry||b.sector||'EDGE').toUpperCase() : 'PENDING';
       const name = b && b.name ? (b.name + ' · ') : '';
       html+=`<div class="pos">
         <div class="slot">${String(i).padStart(2,'0')}</div>
         <div class="meta">
-          <div class="ticker">${ticker} <span class="tag">${tag}</span></div>
-          <div class="alloc">${name}Equal weight · <b>${fmt(per)}</b></div>
+          <div class="ticker">${ticker} <span class="tag">${esc(tag)}</span></div>
+          <div class="alloc">${esc(name)}Equal weight · <b>${fmt(per)}</b></div>
+          ${b && b.what ? `<div class="blurb">${esc(b.what)}</div>` : ''}
         </div>
         <div class="wt">10%</div>
+        ${b && (b.different || b.why) ? `<details>
+          <summary>Why this one</summary>
+          <dl>
+            ${b.different ? `<dt>Edge</dt><dd>${esc(b.different)}</dd>` : ''}
+            ${b.why ? `<dt>Model</dt><dd>${esc(b.why)}</dd>` : ''}
+          </dl>
+        </details>` : ''}
       </div>`;
     }
     document.getElementById('poslist').innerHTML=html;
     const note=document.getElementById('posnote');
+    const hasProse = !!(book && book.some(b=>b && b.what));
     if(note) note.innerHTML = book
-      ? `Ten names from <b>Vision</b>, as of ${VISION.as_of||''}. Each position is sized at 10%.`
+      ? `Ten names from <b>Vision</b>, opened ${esc(VISION.as_of||'')}`
+        + `${VISION.config && VISION.config.rebalance ? ` · rebalanced on the first trading day of every ${VISION.config.rebalance==='1M' ? 'month' : esc(VISION.config.rebalance)}` : ''}`
+        + `. Each position is sized at 10%.`
+        + (hasProse && VISION.descriptions_note ? `<br><span style="opacity:.72">${esc(VISION.descriptions_note)}</span>` : '')
       : `Tickers stay <b>N/A</b> until the model assigns them. Each position is sized and ready.`;
     show('s2');
   }
@@ -372,7 +407,7 @@
   function initCalc(){
     const sel=document.getElementById('calcSel'); if(!sel) return;
     const book = VISION && Array.isArray(VISION.book) ? VISION.book : [];
-    sel.innerHTML = book.map((b,i)=>`<option value="${i}">${b.ticker} — ${(b.name||'').slice(0,26)}</option>`).join('')
+    sel.innerHTML = book.map((b,i)=>`<option value="${i}">${esc(b.ticker)} — ${esc((b.name||'').slice(0,26))}</option>`).join('')
       || '<option value="-1">No holdings yet</option>';
     document.getElementById('calcPer').textContent = fmt(cash/10);
     sel.onchange = computeCalc;
@@ -402,13 +437,13 @@
     if(pill) pill.textContent = `${c.window||'2Y'} backtest`;
     const sub = document.getElementById('growthSub');
     if(sub) sub.innerHTML =
-      `Vision — ${c.window||'2Y'} backtest, ${c.rebalance||'1M'} rebalance, ${Math.round((c.growth_mix||0.75)*100)}% growth mix, net of ~${c.cost_bps||10}bps. `
+      `Vision — ${c.window||'2Y'} backtest, ${c.rebalance||'1M'} rebalance, net of ~${c.cost_bps||10}bps. `
       + `CAGR <b style="color:var(--green-bright)">${fmtPct(p.cagr)}</b> · Sharpe ${p.sharpe!=null?Number(p.sharpe).toFixed(2):'—'}. Backtest, not a forecast.`;
     // 20-year track record caption + stat
     const lp = VISION.performance_long||{}, lc = VISION.curve_long||{};
     const ltSub = document.getElementById('ltSub');
     if(ltSub) ltSub.innerHTML =
-      `Full ${lc.window||'20Y'} backtest at ${c.rebalance||'1M'} rebalance, ${Math.round((c.growth_mix||0.75)*100)}% growth mix, net of ~${c.cost_bps||10}bps — vs the S&P 500. Backtest, not a forecast.`;
+      `Full ${lc.window||'20Y'} backtest at ${c.rebalance||'1M'} rebalance, net of ~${c.cost_bps||10}bps — vs the S&P 500. Backtest, not a forecast.`;
     const ltStat = document.getElementById('ltStat');
     if(ltStat) ltStat.innerHTML = `${lc.window||'20Y'} CAGR <b>${fmtPct(lp.cagr)}</b>`;
     const ltPill = document.getElementById('ltPill');
