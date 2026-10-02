@@ -29,7 +29,7 @@ window.VISION_DATA = {
       "signal_col": "ret_12_1",
       "price": 1787.69,
       "industry": "Computer Hardware",
-      "what": "SANDISK CORP is a computer hardware company, based in California; U.S.A.",
+      "what": "Sandisk Corporation develops, manufactures, and sells data storage devices and solutions using NAND flash technology in the Americas, Europe, the Middle East, Africa, Asia, and internationally.",
       "standing": "Its momentum reading put it in the top 0.2% of the 601 companies that cleared the model's size and solvency filters this month. It carried a $176B market cap at the rebalance.",
       "why": "Ranked 1 of 10 in this month's book on a 13x rise over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 34%) and carries debt under 4x EBITDA (at 0.0x). It holds one of the 2 places the model allows any single sector, which is why a stronger Technology name may be absent."
     },
@@ -42,7 +42,7 @@ window.VISION_DATA = {
       "signal_col": "ret_12_1",
       "price": 1097.39,
       "industry": "Semiconductors",
-      "what": "MICRON TECHNOLOGY INC is a semiconductors company, based in Idaho; U.S.A.",
+      "what": "Micron Technology, Inc. designs, develops, manufactures, and sells memory and storage products in the United States, Taiwan, Japan, Mainland China, Hong Kong, Europe, and internationally.",
       "standing": "Its momentum reading put it in the top 0.3% of the 601 companies that cleared the model's size and solvency filters this month. It carried a $1,371B market cap at the rebalance.",
       "why": "Ranked 2 of 10 in this month's book on a +413.3% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 29%) and carries debt under 4x EBITDA (at 0.1x). It holds one of the 2 places the model allows any single sector, which is why a stronger Technology name may be absent."
     },
@@ -55,7 +55,7 @@ window.VISION_DATA = {
       "signal_col": "ret_12_1",
       "price": 191.14,
       "industry": "Metal Fabrication",
-      "what": "ATI INC is a metal fabrication company, based in Pennsylvania; U.S.A.",
+      "what": "ATI Inc. produces and sells specialty materials and complex components worldwide. It operates in two segments, High Performance Materials & Components, and Advanced Alloys & Solutions.",
       "standing": "Its momentum reading put it in the top 2% of the 601 companies that cleared the model's size and solvency filters this month. It carried a $21B market cap at the rebalance.",
       "why": "Ranked 3 of 10 in this month's book on a +142.1% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 12%) and carries debt under 4x EBITDA (at 2.3x). It holds one of the 2 places the model allows any single sector, which is why a stronger Industrials name may be absent."
     },
@@ -68,7 +68,7 @@ window.VISION_DATA = {
       "signal_col": "ret_12_1",
       "price": 301.27,
       "industry": "Internet Content & Information",
-      "what": "TWILIO INC is a internet content & information company, based in California; U.S.A.",
+      "what": "Twilio Inc., together with its subsidiaries, provides customer engagement platform solutions in the United States and internationally.",
       "standing": "Its momentum reading put it in the top 2.7% of the 601 companies that cleared the model's size and solvency filters this month. It carried a $28B market cap at the rebalance.",
       "why": "Ranked 4 of 10 in this month's book on a +122.6% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 17%) and carries debt under 4x EBITDA (at 3.4x). It holds one of the 2 places the model allows any single sector, which is why a stronger Communication Services name may be absent."
     },
@@ -81,7 +81,7 @@ window.VISION_DATA = {
       "signal_col": "ret_12_1",
       "price": 408.46,
       "industry": "Oil & Gas Refining & Marketing",
-      "what": "VALERO ENERGY CORP is a oil & gas refining & marketing company, based in Texas; U.S.A.",
+      "what": "Valero Energy Corporation manufactures, markets, and sells petroleum-based and low-carbon liquid transportation fuels and petrochemical products in the United States, Canada, the United Kingdom, Ireland, Latin America, Mexico, Peru, and internationally.",
       "standing": "Its momentum reading put it in the top 2.8% of the 601 companies that cleared the model's size and solvency filters this month. It carried a $75B market cap at the rebalance.",
       "why": "Ranked 5 of 10 in this month's book on a +120.6% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 4%) and carries debt under 4x EBITDA (at 1.2x). It holds one of the 2 places the model allows any single sector, which is why a stronger Energy name may be absent."
     },
@@ -94,7 +94,7 @@ window.VISION_DATA = {
       "signal_col": "ret_12_1",
       "price": 85.61,
       "industry": "Telecom Services",
-      "what": "MILLICOM INTERNATIONAL CELLULAR SA is a telecom services company, based in Luxembourg.",
+      "what": "Millicom International Cellular S.A. engages in the provision cable and mobile services in Latin America.",
       "standing": "Its momentum reading put it in the top 3% of the 601 companies that cleared the model's size and solvency filters this month. It carried a $14B market cap at the rebalance.",
       "why": "Ranked 6 of 10 in this month's book on a +109.0% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 17%) and carries debt under 4x EBITDA (at 3.2x). It holds one of the 2 places the model allows any single sector, which is why a stronger Communication Services name may be absent."
     },
@@ -107,7 +107,7 @@ window.VISION_DATA = {
       "signal_col": "ret_12_1",
       "price": 112.7,
       "industry": "Oil & Gas Refining & Marketing",
-      "what": "HF SINCLAIR CORP is a oil & gas refining & marketing company, based in Texas; U.S.A.",
+      "what": "HF Sinclair Corporation operates as an independent energy company in the United States. It operates through five segments: Refining, Renewables, Marketing, Lubricants & Specialties, and Midstream.",
       "standing": "Its momentum reading put it in the top 3.3% of the 601 companies that cleared the model's size and solvency filters this month. It carried a $12B market cap at the rebalance.",
       "why": "Ranked 7 of 10 in this month's book on a +106.4% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 5%) and carries debt under 4x EBITDA (at 1.2x). It holds one of the 2 places the model allows any single sector, which is why a stronger Energy name may be absent."
     },
@@ -120,7 +120,7 @@ window.VISION_DATA = {
       "signal_col": "ret_12_1",
       "price": 265.72,
       "industry": "Diagnostics & Research",
-      "what": "ILLUMINA INC is a diagnostics & research company, based in California; U.S.A.",
+      "what": "Illumina, Inc. provides sequencing- and array-based solutions for genetic and genomic analysis in the Americas, Europe, Greater China, the Asia Pacific, the Middle East, and Africa.",
       "standing": "Its momentum reading put it in the top 3.8% of the 601 companies that cleared the model's size and solvency filters this month. It carried a $21B market cap at the rebalance.",
       "why": "Ranked 8 of 10 in this month's book on a +102.6% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 22%) and carries debt under 4x EBITDA (at 1.7x). It holds one of the 2 places the model allows any single sector, which is why a stronger Healthcare name may be absent."
     },
@@ -133,7 +133,7 @@ window.VISION_DATA = {
       "signal_col": "ret_12_1",
       "price": 408.47,
       "industry": "Diagnostics & Research",
-      "what": "NATERA INC is a diagnostics & research company, based in California; U.S.A.",
+      "what": "Natera, Inc., a diagnostics company, engages in the development and commercialization of molecular testing services worldwide.",
       "standing": "Its momentum reading put it in the top 4.5% of the 601 companies that cleared the model's size and solvency filters this month. It carried a $28B market cap at the rebalance.",
       "why": "Ranked 9 of 10 in this month's book on a +98.5% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 4%) and carries debt under 4x EBITDA. It holds one of the 2 places the model allows any single sector, which is why a stronger Healthcare name may be absent."
     },
@@ -146,7 +146,7 @@ window.VISION_DATA = {
       "signal_col": "ret_12_1",
       "price": 227.2,
       "industry": "Integrated Freight & Logistics",
-      "what": "HUNT J B TRANSPORT SERVICES INC is a integrated freight & logistics company, based in Arkansas; U.S.A.",
+      "what": "J.B. Hunt Transport Services, Inc. provides surface transportation, delivery, and logistic services in the United States.",
       "standing": "Its momentum reading put it in the top 4.8% of the 601 companies that cleared the model's size and solvency filters this month. It carried a $23B market cap at the rebalance.",
       "why": "Ranked 10 of 10 in this month's book on a +94.9% move over the last twelve months, excluding the most recent month \u2014 the only thing this model ranks on. It also passed the model's solvency screens: it generates positive free cash flow (margin 10%) and carries debt under 4x EBITDA (at 0.8x). It holds one of the 2 places the model allows any single sector, which is why a stronger Industrials name may be absent."
     }
@@ -2126,15 +2126,15 @@ window.VISION_DATA = {
       "excess": 0.07341734550457502
     }
   ],
-  "generated_at": "2026-10-01T23:07:06Z",
+  "generated_at": "2026-10-02T01:10:26Z",
   "disclaimer": "Backtest, net of ~10bps costs. Not a forecast or investment advice.",
   "total_return": {
-    "edge_ret": 0.09768594471935743,
-    "sp_ret": -0.007085502555583489,
-    "excess": 0.10477144727494092,
+    "edge_ret": 0.08388454059593609,
+    "sp_ret": -0.008026822544264123,
+    "excess": 0.09191136314020021,
     "since": "2026-08-04",
-    "as_of": "2026-10-01",
-    "n_books": 2
+    "as_of": "2026-09-02",
+    "n_books": 1
   },
   "descriptions_note": "Business descriptions are sourced from public company profiles. The ranking and sector-cap notes are computed from this model's own numbers. Neither is research, and neither played any part in choosing the stocks."
 };
